@@ -1,0 +1,4 @@
+# Very basic gitignore for iOS development
+.DS_Store
+Pods
+xcuserdata/

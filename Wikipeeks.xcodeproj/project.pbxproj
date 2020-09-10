@@ -3,19 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42A704355953FC534AAFFC96 /* Pods_Wikipeeks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FA66FA417C7B050899F0 /* Pods_Wikipeeks.framework */; };
 		92D688B22509942A00AD8B49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D688B12509942A00AD8B49 /* AppDelegate.swift */; };
 		92D688B42509942A00AD8B49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D688B32509942A00AD8B49 /* SceneDelegate.swift */; };
 		92D688B62509942A00AD8B49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D688B52509942A00AD8B49 /* ViewController.swift */; };
 		92D688B92509942A00AD8B49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D688B72509942A00AD8B49 /* Main.storyboard */; };
 		92D688BB2509942D00AD8B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D688BA2509942D00AD8B49 /* Assets.xcassets */; };
 		92D688BE2509942D00AD8B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D688BC2509942D00AD8B49 /* LaunchScreen.storyboard */; };
+		92D688C62509AD8C00AD8B49 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D688C52509AD8C00AD8B49 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2899FA66FA417C7B050899F0 /* Pods_Wikipeeks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wikipeeks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E272A1578C4F5546864FE2 /* Pods-Wikipeeks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wikipeeks.release.xcconfig"; path = "Target Support Files/Pods-Wikipeeks/Pods-Wikipeeks.release.xcconfig"; sourceTree = "<group>"; };
 		92D688AE2509942A00AD8B49 /* Wikipeeks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wikipeeks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D688B12509942A00AD8B49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D688B32509942A00AD8B49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		92D688BA2509942D00AD8B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92D688BD2509942D00AD8B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92D688BF2509942D00AD8B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92D688C52509AD8C00AD8B49 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		AFC68020FAFDCB2F29E1CE6B /* Pods-Wikipeeks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wikipeeks.debug.xcconfig"; path = "Target Support Files/Pods-Wikipeeks/Pods-Wikipeeks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D688C62509AD8C00AD8B49 /* WebKit.framework in Frameworks */,
+				42A704355953FC534AAFFC96 /* Pods_Wikipeeks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +50,8 @@
 			children = (
 				92D688B02509942A00AD8B49 /* Wikipeeks */,
 				92D688AF2509942A00AD8B49 /* Products */,
+				E0B5510933AFBA07DA946FFF /* Pods */,
+				DB3FBE10C0A1AEB4A9B2E153 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +77,24 @@
 			path = Wikipeeks;
 			sourceTree = "<group>";
 		};
+		DB3FBE10C0A1AEB4A9B2E153 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92D688C52509AD8C00AD8B49 /* WebKit.framework */,
+				2899FA66FA417C7B050899F0 /* Pods_Wikipeeks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0B5510933AFBA07DA946FFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFC68020FAFDCB2F29E1CE6B /* Pods-Wikipeeks.debug.xcconfig */,
+				43E272A1578C4F5546864FE2 /* Pods-Wikipeeks.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92D688C22509942D00AD8B49 /* Build configuration list for PBXNativeTarget "Wikipeeks" */;
 			buildPhases = (
+				869F96C01E11B47162118891 /* [CP] Check Pods Manifest.lock */,
 				92D688AA2509942A00AD8B49 /* Sources */,
 				92D688AB2509942A00AD8B49 /* Frameworks */,
 				92D688AC2509942A00AD8B49 /* Resources */,
+				9C61C3A396A86F7E32F90F4D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		869F96C01E11B47162118891 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wikipeeks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C61C3A396A86F7E32F90F4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wikipeeks/Pods-Wikipeeks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wikipeeks/Pods-Wikipeeks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wikipeeks/Pods-Wikipeeks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92D688AA2509942A00AD8B49 /* Sources */ = {
@@ -282,6 +354,7 @@
 		};
 		92D688C32509942D00AD8B49 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFC68020FAFDCB2F29E1CE6B /* Pods-Wikipeeks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +373,7 @@
 		};
 		92D688C42509942D00AD8B49 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43E272A1578C4F5546864FE2 /* Pods-Wikipeeks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
