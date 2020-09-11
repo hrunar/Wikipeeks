@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		42A704355953FC534AAFFC96 /* Pods_Wikipeeks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899FA66FA417C7B050899F0 /* Pods_Wikipeeks.framework */; };
+		923AD570250B9C5C0029C18B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AD56F250B9C5C0029C18B /* Api.swift */; };
+		923AD572250BA5960029C18B /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AD571250BA5960029C18B /* Errors.swift */; };
+		923AD574250BA5F50029C18B /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AD573250BA5F50029C18B /* StringUtils.swift */; };
+		923AD585250BAA3A0029C18B /* StringUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AD584250BAA3A0029C18B /* StringUtilsTest.swift */; };
+		923AD586250BAADC0029C18B /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AD573250BA5F50029C18B /* StringUtils.swift */; };
 		92D688B22509942A00AD8B49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D688B12509942A00AD8B49 /* AppDelegate.swift */; };
 		92D688B42509942A00AD8B49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D688B32509942A00AD8B49 /* SceneDelegate.swift */; };
 		92D688B62509942A00AD8B49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D688B52509942A00AD8B49 /* ViewController.swift */; };
@@ -17,9 +22,25 @@
 		92D688C62509AD8C00AD8B49 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D688C52509AD8C00AD8B49 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		923AD57F250BAA120029C18B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92D688A62509942A00AD8B49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92D688AD2509942A00AD8B49;
+			remoteInfo = Wikipeeks;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2899FA66FA417C7B050899F0 /* Pods_Wikipeeks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wikipeeks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E272A1578C4F5546864FE2 /* Pods-Wikipeeks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wikipeeks.release.xcconfig"; path = "Target Support Files/Pods-Wikipeeks/Pods-Wikipeeks.release.xcconfig"; sourceTree = "<group>"; };
+		923AD56F250B9C5C0029C18B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		923AD571250BA5960029C18B /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		923AD573250BA5F50029C18B /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		923AD57A250BAA120029C18B /* WikipeeksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikipeeksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		923AD57E250BAA120029C18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		923AD584250BAA3A0029C18B /* StringUtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtilsTest.swift; sourceTree = "<group>"; };
 		92D688AE2509942A00AD8B49 /* Wikipeeks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wikipeeks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D688B12509942A00AD8B49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D688B32509942A00AD8B49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +54,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		923AD577250BAA120029C18B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92D688AB2509942A00AD8B49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +73,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		923AD57B250BAA120029C18B /* WikipeeksTests */ = {
+			isa = PBXGroup;
+			children = (
+				923AD57E250BAA120029C18B /* Info.plist */,
+				923AD584250BAA3A0029C18B /* StringUtilsTest.swift */,
+			);
+			path = WikipeeksTests;
+			sourceTree = "<group>";
+		};
 		92D688A52509942A00AD8B49 = {
 			isa = PBXGroup;
 			children = (
 				92D688B02509942A00AD8B49 /* Wikipeeks */,
+				923AD57B250BAA120029C18B /* WikipeeksTests */,
 				92D688AF2509942A00AD8B49 /* Products */,
 				E0B5510933AFBA07DA946FFF /* Pods */,
 				DB3FBE10C0A1AEB4A9B2E153 /* Frameworks */,
@@ -59,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				92D688AE2509942A00AD8B49 /* Wikipeeks.app */,
+				923AD57A250BAA120029C18B /* WikipeeksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +112,9 @@
 				92D688BA2509942D00AD8B49 /* Assets.xcassets */,
 				92D688BC2509942D00AD8B49 /* LaunchScreen.storyboard */,
 				92D688BF2509942D00AD8B49 /* Info.plist */,
+				923AD56F250B9C5C0029C18B /* Api.swift */,
+				923AD571250BA5960029C18B /* Errors.swift */,
+				923AD573250BA5F50029C18B /* StringUtils.swift */,
 			);
 			path = Wikipeeks;
 			sourceTree = "<group>";
@@ -98,6 +140,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		923AD579250BAA120029C18B /* WikipeeksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 923AD581250BAA120029C18B /* Build configuration list for PBXNativeTarget "WikipeeksTests" */;
+			buildPhases = (
+				923AD576250BAA120029C18B /* Sources */,
+				923AD577250BAA120029C18B /* Frameworks */,
+				923AD578250BAA120029C18B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				923AD580250BAA120029C18B /* PBXTargetDependency */,
+			);
+			name = WikipeeksTests;
+			productName = WikipeeksTests;
+			productReference = 923AD57A250BAA120029C18B /* WikipeeksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		92D688AD2509942A00AD8B49 /* Wikipeeks */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92D688C22509942D00AD8B49 /* Build configuration list for PBXNativeTarget "Wikipeeks" */;
@@ -127,6 +187,10 @@
 				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = "Runar Svendsen";
 				TargetAttributes = {
+					923AD579250BAA120029C18B = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 92D688AD2509942A00AD8B49;
+					};
 					92D688AD2509942A00AD8B49 = {
 						CreatedOnToolsVersion = 11.7;
 					};
@@ -146,11 +210,19 @@
 			projectRoot = "";
 			targets = (
 				92D688AD2509942A00AD8B49 /* Wikipeeks */,
+				923AD579250BAA120029C18B /* WikipeeksTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		923AD578250BAA120029C18B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92D688AC2509942A00AD8B49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,17 +278,37 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		923AD576250BAA120029C18B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923AD586250BAADC0029C18B /* StringUtils.swift in Sources */,
+				923AD585250BAA3A0029C18B /* StringUtilsTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92D688AA2509942A00AD8B49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923AD574250BA5F50029C18B /* StringUtils.swift in Sources */,
 				92D688B62509942A00AD8B49 /* ViewController.swift in Sources */,
+				923AD572250BA5960029C18B /* Errors.swift in Sources */,
 				92D688B22509942A00AD8B49 /* AppDelegate.swift in Sources */,
+				923AD570250B9C5C0029C18B /* Api.swift in Sources */,
 				92D688B42509942A00AD8B49 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		923AD580250BAA120029C18B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92D688AD2509942A00AD8B49 /* Wikipeeks */;
+			targetProxy = 923AD57F250BAA120029C18B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		92D688B72509942A00AD8B49 /* Main.storyboard */ = {
@@ -238,6 +330,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		923AD582250BAA120029C18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3PMHXULHD6;
+				INFOPLIST_FILE = WikipeeksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = no.hrunar.WikipeeksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wikipeeks.app/Wikipeeks";
+			};
+			name = Debug;
+		};
+		923AD583250BAA120029C18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3PMHXULHD6;
+				INFOPLIST_FILE = WikipeeksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = no.hrunar.WikipeeksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wikipeeks.app/Wikipeeks";
+			};
+			name = Release;
+		};
 		92D688C02509942D00AD8B49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -393,6 +525,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		923AD581250BAA120029C18B /* Build configuration list for PBXNativeTarget "WikipeeksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923AD582250BAA120029C18B /* Debug */,
+				923AD583250BAA120029C18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92D688A92509942A00AD8B49 /* Build configuration list for PBXProject "Wikipeeks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

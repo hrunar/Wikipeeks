@@ -52,6 +52,13 @@
                                     <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o3A-qI-43x"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIQ-x5-fJQ">
+                                <rect key="frame" x="22" y="143" width="337" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -75,6 +82,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="FVN-sc-5xu" id="9nD-PN-I6x"/>
                         <outlet property="searchField" destination="Tj5-p1-eST" id="Gav-ct-vhc"/>
+                        <outlet property="topicCounter" destination="GIQ-x5-fJQ" id="T6h-7O-F6r"/>
                         <outlet property="webView" destination="GK0-fO-eyk" id="H9c-uj-dkR"/>
                     </connections>
                 </viewController>

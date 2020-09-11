@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var topicCounter: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,37 +23,33 @@ class ViewController: UIViewController {
     }
 
     @IBAction func searchPressed(_ sender: UIButton) {
-        guard let topic = self.searchField.text else {
-            print("No topic")
-            return
-        }
-        search(for: topic)
-        .done(show)
+        firstly { () -> Promise<String> in
+            activityIndicator.startAnimating()
+            guard let topic = self.searchField.text else {
+                throw AppErrors.appError(reason: "Topic was blank. Please enter something in the search field")
+            }
+            return .value(topic)
+        }.then(Api.search)
+        .ensure { [weak self] in
+            self?.activityIndicator.stopAnimating()
+        }.then(showTopicCount)
+        .done(showArticle)
         .catch(showError)
     }
-    
-    private func search(for topic: String) -> Promise<SearchResult> {
-        let decoder = JSONDecoder()
-        guard let encodedTopic = topic.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-            let url = URL(string: "https://en.wikipedia.org/w/api.php?action=parse&section=0&prop=text&format=json&page=\(encodedTopic)") else {
-                return Promise(error: AppErrors.appError(reason: "Could not start search, please try again"))
-        }
-        activityIndicator.startAnimating()
-        var searchData: Data!
-        return URLSession.shared.dataTask(.promise, with: URLRequest(url: url))
-            .map {
-                searchData = $0.data
-                return try decoder.decode(SearchResult.self, from: searchData)
-            }.recover { error -> Promise<SearchResult> in
-                print(error)
-                let searchResultError = try decoder.decode(SearchResultError.self, from: searchData)
-                throw AppErrors.appError(reason: searchResultError.error.info)
-            }.ensure {
-            self.activityIndicator.stopAnimating()
-        }
+        
+    private func showTopicCount(_ topic: String, _ result: SearchResult) -> Promise<SearchResult> {
+        let topicCount = result.parse.text.value.occurrencesOf(topic)
+        self.topicCounter.attributedText =
+            NSMutableAttributedString()
+                .bold(topic)
+                .normal(" occurs ")
+                .bold("\(topicCount)")
+                .normal(" times")
+        self.topicCounter.isHidden = false
+        return .value(result)
     }
     
-    private func show(_ result: SearchResult) {
+    private func showArticle(_ result: SearchResult) {
         webView.loadHTMLString(result.parse.text.value, baseURL: URL(string: "https://en.wikipedia.org"))
     }
     
@@ -64,66 +61,3 @@ class ViewController: UIViewController {
     }
     
 }
-
-/* Value objects search result */
-struct SearchResult: Decodable {
-    let parse: Parse
-}
-
-struct Parse: Decodable {
-    let title: String
-    let pageID: Int
-    let text: ParseText
-    
-    enum CodingKeys: String, CodingKey {
-        case pageID = "pageid"
-        case title
-        case text
-    }
-}
-
-struct ParseText: Decodable {
-    let value: String
-
-    enum CodingKeys: String, CodingKey {
-        case value = "*"
-    }
-}
-
-/* Value objects for parsing search result errors */
-struct SearchResultError: Decodable {
-    let error: SearchError
-    let servedBy: String
-    
-    enum CodingKeys: String, CodingKey {
-        case error
-        case servedBy = "servedby"
-    }
-}
-
-struct SearchError: Decodable {
-    let code: String
-    let info: String
-    let value: String
-    enum CodingKeys: String, CodingKey {
-        case code
-        case info
-        case value = "*"
-    }
-}
-
-/* Error objects */
-enum AppErrors: Error {
-  case appError(reason: String)
-}
-
-extension AppErrors: LocalizedError {
-  var errorDescription: String? {
-    switch(self) {
-    case .appError(reason: let reason):
-      return reason
-    }
-  }
-}
-
-
